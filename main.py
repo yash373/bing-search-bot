@@ -1,5 +1,4 @@
 import time
-import keyboard
 import random
 import nltk
 import os
@@ -12,6 +11,5 @@ def get_random_words():
     return ' '.join(random.sample(word_list, 4))
 
 def make_search():
-    print("search content")
-
-print(get_random_words())
+    # open browser and search for the words
+    os.system(f"xdg-open 'https://www.bing.com/search?q={get_random_words()}'")
