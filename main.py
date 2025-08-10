@@ -2,7 +2,8 @@ import time
 import random
 import nltk
 import os
-from nltk.corpus import words
+import sys
+import webbrowser
 from nltk.corpus import words
 
 def get_random_words():
@@ -11,8 +12,9 @@ def get_random_words():
     return ' '.join(random.sample(word_list, 4))
 
 def make_search():
-    # open browser and search for the words
-    os.system(f"xdg-open 'https://www.bing.com/search?q={get_random_words()}'")
+    query = get_random_words()
+    url = f"https://www.bing.com/search?q={query}"
+    webbrowser.open(url)
 
 if __name__ == "__main__":
     searches = int(input("Enter the number of searches to perform: "))
